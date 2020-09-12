@@ -1,0 +1,10 @@
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csprojAssemblyReference.cache
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.Form1.resources
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.Properties.Resources.resources
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csproj.GenerateResource.cache
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csproj.CoreCompileInputs.cache
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.exe.config
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.exe
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.pdb
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.exe
+D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.pdb
