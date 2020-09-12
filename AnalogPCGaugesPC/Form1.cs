@@ -34,13 +34,27 @@ namespace AnalogPCGaugesPC
             {
                 MessageBox.Show(ex.Message,"Fehler",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
+            timer.Start();
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-
+            byte[] SerialOut;
+            SerialOut = new byte[4];
+            byte i;
+            for (i = 0; i < SerialOut.Length; i++)
+            {
+                SerialOut[i] = 0;
+            }
+            double CPU_Use = (CPU_Usage.NextValue() * 2.55);
+            double RAM_Use = (RAM_Usage.NextValue() * 2.55);
+            SerialOut[0] = (byte)CPU_Use;
+            SerialOut[1] = (byte)RAM_Use;
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Write(SerialOut, 0, 4);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

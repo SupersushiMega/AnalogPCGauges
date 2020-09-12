@@ -33,15 +33,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.CPU_Usage = new System.Diagnostics.PerformanceCounter();
+            this.RAM_Usage = new System.Diagnostics.PerformanceCounter();
+            ((System.ComponentModel.ISupportInitialize)(this.CPU_Usage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RAM_Usage)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 122);
+            this.button1.Location = new System.Drawing.Point(160, 63);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 73);
+            this.button1.Size = new System.Drawing.Size(80, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,16 +55,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(367, 79);
+            this.label1.Location = new System.Drawing.Point(184, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // notifyIcon1
             // 
@@ -71,17 +77,31 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
+            // CPU_Usage
+            // 
+            this.CPU_Usage.CategoryName = "Processor";
+            this.CPU_Usage.CounterName = "% Processor Time";
+            this.CPU_Usage.InstanceName = "_Total";
+            // 
+            // RAM_Usage
+            // 
+            this.RAM_Usage.CategoryName = "Memory";
+            this.RAM_Usage.CounterName = "% Committed Bytes In Use";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(400, 234);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CPU_Usage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RAM_Usage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +112,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Diagnostics.PerformanceCounter CPU_Usage;
+        private System.Diagnostics.PerformanceCounter RAM_Usage;
     }
 }
 

@@ -8,3 +8,13 @@ D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\bin\Debug\AnalogPCG
 D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.pdb
 D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.exe
 D:\Codes\C#\AnalogPCGauges\AnalogPCGaugesPC\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.pdb
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csprojAssemblyReference.cache
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.Form1.resources
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.Properties.Resources.resources
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csproj.GenerateResource.cache
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.csproj.CoreCompileInputs.cache
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.exe
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Debug\AnalogPCGaugesPC.pdb
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.exe.config
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.exe
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Debug\AnalogPCGaugesPC.pdb

@@ -1,7 +1,8 @@
 //byte Brightness = 255;
 int incomingByte;
-int RXBuffer[10];
+int RXBuffer[] = {0, 0, 0, 0};
 int RXCounter;
+int AnalogOut[] = {0, 0, 0, 0};
 
 
 void setup() {
@@ -11,19 +12,28 @@ void setup() {
 }
 
 void loop() {
+  if (RXBuffer[0] < AnalogOut[0])
+  {
+    AnalogOut[0]--;
+    analogWrite(3, AnalogOut[0]);
+  }
+
+  if (RXBuffer[0] > AnalogOut[0])
+  {
+    AnalogOut[0]++;
+    analogWrite(3, AnalogOut[0]);
+  }
+  
   if (Serial.available() > 0) {
     RXBuffer[RXCounter] = Serial.read();
     RXCounter++;
     if(RXCounter > 3){
-      Serial.print("I received: ");
-      Serial.print(RXBuffer[0], DEC);
-      Serial.print(", ");
       Serial.print(RXBuffer[1], DEC);
       Serial.print(", ");
       Serial.print(RXBuffer[2], DEC);
       Serial.print(", ");
       Serial.println(RXBuffer[3], DEC);
-      analogWrite(3, RXBuffer[0]);
+      analogWrite(5, RXBuffer[1]);
       RXCounter = 0;
     }
     // read the incoming byte:
@@ -33,6 +43,10 @@ void loop() {
     //Serial.readBytesUntil(
     //analogWrite(3, incomingByte);
   }
+    else
+    {
+      RXCounter = 0;
+    }
   // put your main code here, to run repeatedly:
   //Brightness--;
  
