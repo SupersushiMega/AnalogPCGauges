@@ -1,4 +1,4 @@
-//byte Brightness = 255;
+//byte Brightness = 0;
 int incomingByte;
 int RXBuffer[] = {0, 0, 0, 0};
 int RXCounter;

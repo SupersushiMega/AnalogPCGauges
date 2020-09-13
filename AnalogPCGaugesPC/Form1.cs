@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +41,10 @@ namespace AnalogPCGaugesPC
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            GetComponent("Win32_Processor", "Name");
+            GetComponent("Win32_VideoController", "Name");
+            GetComponent("Win32_TemperatureProbe", "CurrentReading");
+            Console.Read();
             byte[] SerialOut;
             SerialOut = new byte[4];
             byte i;
@@ -66,6 +71,16 @@ namespace AnalogPCGaugesPC
         private void notifyIcon1_Click(object sender, EventArgs e)
         {
             this.Show();
+        }
+
+        private static void GetComponent(string hwclass, string syntax)
+        {
+            ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + hwclass);
+
+            foreach(ManagementObject mj in mos.Get())
+            {
+                Console.WriteLine(Convert.ToString(mj[syntax]));
+            }
         }
     }
 }
