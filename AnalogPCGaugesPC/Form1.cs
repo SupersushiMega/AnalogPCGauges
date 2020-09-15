@@ -36,8 +36,9 @@ namespace AnalogPCGaugesPC
 
             comp = new Computer()
             {
-                HDDEnabled = true,
+                FanControllerEnabled = true,
                 MainboardEnabled = true,
+                HDDEnabled = true,
                 RAMEnabled = true,
                 GPUEnabled = true,
                 CPUEnabled = true
@@ -75,20 +76,47 @@ namespace AnalogPCGaugesPC
                 hardware.Update();
             }
 
-            for (i = 0; i < SerialOut.Length - 1; i++)
+            for (i = 0; i < SerialOut.Length; i++)
             {
                 if (SelectSensor[i] != null)
                 {
                     if (SelectSensor[i].Value != null)
                     {
-                        if (SelectSensor[i].SensorType == SensorType.Level || SelectSensor[i].SensorType == SensorType.Load || SelectSensor[i].SensorType == SensorType.Control || SelectSensor[i].SensorType == SensorType.Temperature)
+                        CheckBox Check = CustomMaxBool1;
+                        NumericUpDown CustMax = CustomMax1;
+                        if (i == 1)
                         {
-                            SerialOut[i] = (byte)(SelectSensor[i].Value * (255 / 100));
+                            CustMax = CustomMax2;
+                            Check = CustomMaxBool2;
                         }
 
+                        else if (i == 2)
+                        {
+                            CustMax = CustomMax3;
+                            Check = CustomMaxBool3;
+                        }
+
+                        else if (i == 3)
+                        {
+                            CustMax = CustomMax4;
+                            Check = CustomMaxBool4;
+                        }
+
+                        if (Check.Checked)
+                        {
+                            SerialOut[i] = (byte)(SelectSensor[i].Value * (255f / (float)CustMax.Value));
+                        }
                         else
                         {
-                            SerialOut[i] = (byte)(SelectSensor[i].Value * (255 / SelectSensor[i].Max));
+                            if (SelectSensor[i].SensorType == SensorType.Level || SelectSensor[i].SensorType == SensorType.Load || SelectSensor[i].SensorType == SensorType.Control || SelectSensor[i].SensorType == SensorType.Temperature)
+                            {
+                                SerialOut[i] = (byte)(SelectSensor[i].Value * (255f / 100f));
+                            }
+
+                            else
+                            {
+                                SerialOut[i] = (byte)(SelectSensor[i].Value * (255f / SelectSensor[i].Max));
+                            }
                         }
                         Debug.Write(SelectSensor[i].Name);
                         Debug.Write(" ");
@@ -187,7 +215,7 @@ namespace AnalogPCGaugesPC
             }
         }
 
-        private void Guage1SensType_SelectedIndexChanged(object sender, EventArgs e)
+        private void GuageSensType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string send = (((ComboBox)sender).Name);
             byte Output = 0; 
@@ -235,7 +263,7 @@ namespace AnalogPCGaugesPC
             }
         }
 
-        private void Guage1Sens_SelectedIndexChanged(object sender, EventArgs e)
+        private void GuageSens_SelectedIndexChanged(object sender, EventArgs e)
         {
             string send = (((ComboBox)sender).Name);
             byte Output = 0;
@@ -302,6 +330,7 @@ namespace AnalogPCGaugesPC
 
         private void PortSearch_Click(object sender, EventArgs e)
         {
+            port.Items.Clear();
             string[] Ports = SerialPort.GetPortNames();
             port.Items.AddRange(Ports);
         }
@@ -322,6 +351,37 @@ namespace AnalogPCGaugesPC
             {
                 MessageBox.Show(ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CustomMaxValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomMaxBool_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox Check = (CheckBox)sender;
+            NumericUpDown CustMax = CustomMax1;
+            if (Check.Name == CustomMaxBool2.Name)
+            {
+                CustMax = CustomMax2;
+            }
+
+            else if (Check.Name == CustomMaxBool3.Name)
+            {
+                CustMax = CustomMax3;
+            }
+
+            else if (Check.Name == CustomMaxBool4.Name)
+            {
+                CustMax = CustomMax4;
+            }
+            CustMax.Enabled = Check.Checked;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

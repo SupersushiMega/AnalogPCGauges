@@ -53,13 +53,26 @@
             this.Gauge4Hard = new System.Windows.Forms.ComboBox();
             this.port = new System.Windows.Forms.ComboBox();
             this.PortSearch = new System.Windows.Forms.Button();
+            this.CustomMax1 = new System.Windows.Forms.NumericUpDown();
+            this.CustomMaxBool1 = new System.Windows.Forms.CheckBox();
+            this.CustomMaxBool2 = new System.Windows.Forms.CheckBox();
+            this.CustomMax2 = new System.Windows.Forms.NumericUpDown();
+            this.CustomMaxBool3 = new System.Windows.Forms.CheckBox();
+            this.CustomMax3 = new System.Windows.Forms.NumericUpDown();
+            this.CustomMaxBool4 = new System.Windows.Forms.CheckBox();
+            this.CustomMax4 = new System.Windows.Forms.NumericUpDown();
+            this.CustomMaxValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CPU_Usage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RAM_Usage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax4)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
             // 
-            this.timer.Interval = 500;
+            this.timer.Interval = 400;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // notifyIcon1
@@ -101,7 +114,7 @@
             this.Gauge1Sens.Name = "Gauge1Sens";
             this.Gauge1Sens.Size = new System.Drawing.Size(121, 21);
             this.Gauge1Sens.TabIndex = 3;
-            this.Gauge1Sens.SelectedIndexChanged += new System.EventHandler(this.Guage1Sens_SelectedIndexChanged);
+            this.Gauge1Sens.SelectedIndexChanged += new System.EventHandler(this.GuageSens_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -149,7 +162,7 @@
             this.Gauge1SensType.Name = "Gauge1SensType";
             this.Gauge1SensType.Size = new System.Drawing.Size(121, 21);
             this.Gauge1SensType.TabIndex = 8;
-            this.Gauge1SensType.SelectedIndexChanged += new System.EventHandler(this.Guage1SensType_SelectedIndexChanged);
+            this.Gauge1SensType.SelectedIndexChanged += new System.EventHandler(this.GuageSensType_SelectedIndexChanged);
             // 
             // Gauge2Hard
             // 
@@ -170,7 +183,7 @@
             this.Gauge2SensType.Name = "Gauge2SensType";
             this.Gauge2SensType.Size = new System.Drawing.Size(121, 21);
             this.Gauge2SensType.TabIndex = 11;
-            this.Gauge2SensType.SelectedIndexChanged += new System.EventHandler(this.Guage1SensType_SelectedIndexChanged);
+            this.Gauge2SensType.SelectedIndexChanged += new System.EventHandler(this.GuageSensType_SelectedIndexChanged);
             // 
             // Gauge2Sens
             // 
@@ -180,7 +193,7 @@
             this.Gauge2Sens.Name = "Gauge2Sens";
             this.Gauge2Sens.Size = new System.Drawing.Size(121, 21);
             this.Gauge2Sens.TabIndex = 10;
-            this.Gauge2Sens.SelectedIndexChanged += new System.EventHandler(this.Guage1Sens_SelectedIndexChanged);
+            this.Gauge2Sens.SelectedIndexChanged += new System.EventHandler(this.GuageSens_SelectedIndexChanged);
             // 
             // Gauge3SensType
             // 
@@ -190,7 +203,7 @@
             this.Gauge3SensType.Name = "Gauge3SensType";
             this.Gauge3SensType.Size = new System.Drawing.Size(121, 21);
             this.Gauge3SensType.TabIndex = 14;
-            this.Gauge3SensType.SelectedIndexChanged += new System.EventHandler(this.Guage1SensType_SelectedIndexChanged);
+            this.Gauge3SensType.SelectedIndexChanged += new System.EventHandler(this.GuageSensType_SelectedIndexChanged);
             // 
             // Gauge3Sens
             // 
@@ -200,7 +213,7 @@
             this.Gauge3Sens.Name = "Gauge3Sens";
             this.Gauge3Sens.Size = new System.Drawing.Size(121, 21);
             this.Gauge3Sens.TabIndex = 13;
-            this.Gauge3Sens.SelectedIndexChanged += new System.EventHandler(this.Guage1Sens_SelectedIndexChanged);
+            this.Gauge3Sens.SelectedIndexChanged += new System.EventHandler(this.GuageSens_SelectedIndexChanged);
             // 
             // Gauge3Hard
             // 
@@ -220,7 +233,7 @@
             this.Gauge4SensType.Name = "Gauge4SensType";
             this.Gauge4SensType.Size = new System.Drawing.Size(121, 21);
             this.Gauge4SensType.TabIndex = 17;
-            this.Gauge4SensType.SelectedIndexChanged += new System.EventHandler(this.Guage1SensType_SelectedIndexChanged);
+            this.Gauge4SensType.SelectedIndexChanged += new System.EventHandler(this.GuageSensType_SelectedIndexChanged);
             // 
             // Gauge4Sens
             // 
@@ -230,7 +243,7 @@
             this.Gauge4Sens.Name = "Gauge4Sens";
             this.Gauge4Sens.Size = new System.Drawing.Size(121, 21);
             this.Gauge4Sens.TabIndex = 16;
-            this.Gauge4Sens.SelectedIndexChanged += new System.EventHandler(this.Guage1Sens_SelectedIndexChanged);
+            this.Gauge4Sens.SelectedIndexChanged += new System.EventHandler(this.GuageSens_SelectedIndexChanged);
             // 
             // Gauge4Hard
             // 
@@ -262,11 +275,126 @@
             this.PortSearch.UseVisualStyleBackColor = true;
             this.PortSearch.Click += new System.EventHandler(this.PortSearch_Click);
             // 
+            // CustomMax1
+            // 
+            this.CustomMax1.Enabled = false;
+            this.CustomMax1.Location = new System.Drawing.Point(99, 251);
+            this.CustomMax1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.CustomMax1.Name = "CustomMax1";
+            this.CustomMax1.Size = new System.Drawing.Size(100, 20);
+            this.CustomMax1.TabIndex = 21;
+            this.CustomMax1.ValueChanged += new System.EventHandler(this.CustomMaxValueChanged);
+            // 
+            // CustomMaxBool1
+            // 
+            this.CustomMaxBool1.AutoSize = true;
+            this.CustomMaxBool1.Location = new System.Drawing.Point(78, 254);
+            this.CustomMaxBool1.Name = "CustomMaxBool1";
+            this.CustomMaxBool1.Size = new System.Drawing.Size(15, 14);
+            this.CustomMaxBool1.TabIndex = 22;
+            this.CustomMaxBool1.UseVisualStyleBackColor = true;
+            this.CustomMaxBool1.CheckedChanged += new System.EventHandler(this.CustomMaxBool_CheckedChanged);
+            // 
+            // CustomMaxBool2
+            // 
+            this.CustomMaxBool2.AutoSize = true;
+            this.CustomMaxBool2.Location = new System.Drawing.Point(205, 253);
+            this.CustomMaxBool2.Name = "CustomMaxBool2";
+            this.CustomMaxBool2.Size = new System.Drawing.Size(15, 14);
+            this.CustomMaxBool2.TabIndex = 24;
+            this.CustomMaxBool2.UseVisualStyleBackColor = true;
+            this.CustomMaxBool2.CheckedChanged += new System.EventHandler(this.CustomMaxBool_CheckedChanged);
+            // 
+            // CustomMax2
+            // 
+            this.CustomMax2.Enabled = false;
+            this.CustomMax2.Location = new System.Drawing.Point(226, 251);
+            this.CustomMax2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.CustomMax2.Name = "CustomMax2";
+            this.CustomMax2.Size = new System.Drawing.Size(100, 20);
+            this.CustomMax2.TabIndex = 23;
+            this.CustomMax2.ValueChanged += new System.EventHandler(this.CustomMaxValueChanged);
+            // 
+            // CustomMaxBool3
+            // 
+            this.CustomMaxBool3.AutoSize = true;
+            this.CustomMaxBool3.Location = new System.Drawing.Point(332, 253);
+            this.CustomMaxBool3.Name = "CustomMaxBool3";
+            this.CustomMaxBool3.Size = new System.Drawing.Size(15, 14);
+            this.CustomMaxBool3.TabIndex = 26;
+            this.CustomMaxBool3.UseVisualStyleBackColor = true;
+            this.CustomMaxBool3.CheckedChanged += new System.EventHandler(this.CustomMaxBool_CheckedChanged);
+            // 
+            // CustomMax3
+            // 
+            this.CustomMax3.Enabled = false;
+            this.CustomMax3.Location = new System.Drawing.Point(353, 251);
+            this.CustomMax3.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.CustomMax3.Name = "CustomMax3";
+            this.CustomMax3.Size = new System.Drawing.Size(100, 20);
+            this.CustomMax3.TabIndex = 25;
+            this.CustomMax3.ValueChanged += new System.EventHandler(this.CustomMaxValueChanged);
+            // 
+            // CustomMaxBool4
+            // 
+            this.CustomMaxBool4.AutoSize = true;
+            this.CustomMaxBool4.Location = new System.Drawing.Point(459, 253);
+            this.CustomMaxBool4.Name = "CustomMaxBool4";
+            this.CustomMaxBool4.Size = new System.Drawing.Size(15, 14);
+            this.CustomMaxBool4.TabIndex = 28;
+            this.CustomMaxBool4.UseVisualStyleBackColor = true;
+            this.CustomMaxBool4.CheckedChanged += new System.EventHandler(this.CustomMaxBool_CheckedChanged);
+            // 
+            // CustomMax4
+            // 
+            this.CustomMax4.Enabled = false;
+            this.CustomMax4.Location = new System.Drawing.Point(480, 251);
+            this.CustomMax4.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.CustomMax4.Name = "CustomMax4";
+            this.CustomMax4.Size = new System.Drawing.Size(100, 20);
+            this.CustomMax4.TabIndex = 27;
+            this.CustomMax4.ValueChanged += new System.EventHandler(this.CustomMaxValueChanged);
+            // 
+            // CustomMaxValue
+            // 
+            this.CustomMaxValue.AutoSize = true;
+            this.CustomMaxValue.Location = new System.Drawing.Point(4, 254);
+            this.CustomMaxValue.Name = "CustomMaxValue";
+            this.CustomMaxValue.Size = new System.Drawing.Size(62, 13);
+            this.CustomMaxValue.TabIndex = 29;
+            this.CustomMaxValue.Text = "CustomMax";
+            this.CustomMaxValue.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 274);
+            this.Controls.Add(this.CustomMaxValue);
+            this.Controls.Add(this.CustomMaxBool4);
+            this.Controls.Add(this.CustomMax4);
+            this.Controls.Add(this.CustomMaxBool3);
+            this.Controls.Add(this.CustomMax3);
+            this.Controls.Add(this.CustomMaxBool2);
+            this.Controls.Add(this.CustomMax2);
+            this.Controls.Add(this.CustomMaxBool1);
+            this.Controls.Add(this.CustomMax1);
             this.Controls.Add(this.PortSearch);
             this.Controls.Add(this.port);
             this.Controls.Add(this.Gauge4SensType);
@@ -292,6 +420,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CPU_Usage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RAM_Usage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomMax4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +453,15 @@
         private System.Windows.Forms.ComboBox Gauge4Hard;
         private System.Windows.Forms.ComboBox port;
         private System.Windows.Forms.Button PortSearch;
+        private System.Windows.Forms.NumericUpDown CustomMax1;
+        private System.Windows.Forms.CheckBox CustomMaxBool1;
+        private System.Windows.Forms.CheckBox CustomMaxBool2;
+        private System.Windows.Forms.NumericUpDown CustomMax2;
+        private System.Windows.Forms.CheckBox CustomMaxBool3;
+        private System.Windows.Forms.NumericUpDown CustomMax3;
+        private System.Windows.Forms.CheckBox CustomMaxBool4;
+        private System.Windows.Forms.NumericUpDown CustomMax4;
+        private System.Windows.Forms.Label CustomMaxValue;
     }
 }
 
