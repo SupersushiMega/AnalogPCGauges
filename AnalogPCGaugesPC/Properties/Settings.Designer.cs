@@ -34,5 +34,245 @@ namespace AnalogPCGaugesPC.Properties {
                 this["COMPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mainboard")]
+        public string Hard1 {
+            get {
+                return ((string)(this["Hard1"]));
+            }
+            set {
+                this["Hard1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mainboard")]
+        public string Hard2 {
+            get {
+                return ((string)(this["Hard2"]));
+            }
+            set {
+                this["Hard2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mainboard")]
+        public string Hard3 {
+            get {
+                return ((string)(this["Hard3"]));
+            }
+            set {
+                this["Hard3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mainboard")]
+        public string Hard4 {
+            get {
+                return ((string)(this["Hard4"]));
+            }
+            set {
+                this["Hard4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SensType1 {
+            get {
+                return ((int)(this["SensType1"]));
+            }
+            set {
+                this["SensType1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SensType2 {
+            get {
+                return ((int)(this["SensType2"]));
+            }
+            set {
+                this["SensType2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SensType3 {
+            get {
+                return ((int)(this["SensType3"]));
+            }
+            set {
+                this["SensType3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SensType4 {
+            get {
+                return ((int)(this["SensType4"]));
+            }
+            set {
+                this["SensType4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Sens1 {
+            get {
+                return ((int)(this["Sens1"]));
+            }
+            set {
+                this["Sens1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Sens2 {
+            get {
+                return ((int)(this["Sens2"]));
+            }
+            set {
+                this["Sens2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Sens3 {
+            get {
+                return ((int)(this["Sens3"]));
+            }
+            set {
+                this["Sens3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Sens4 {
+            get {
+                return ((int)(this["Sens4"]));
+            }
+            set {
+                this["Sens4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CustMax1 {
+            get {
+                return ((decimal)(this["CustMax1"]));
+            }
+            set {
+                this["CustMax1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CustMax2 {
+            get {
+                return ((decimal)(this["CustMax2"]));
+            }
+            set {
+                this["CustMax2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CustMax3 {
+            get {
+                return ((decimal)(this["CustMax3"]));
+            }
+            set {
+                this["CustMax3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CustMax4 {
+            get {
+                return ((decimal)(this["CustMax4"]));
+            }
+            set {
+                this["CustMax4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CustMaxBool1 {
+            get {
+                return ((bool)(this["CustMaxBool1"]));
+            }
+            set {
+                this["CustMaxBool1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CustMaxBool2 {
+            get {
+                return ((bool)(this["CustMaxBool2"]));
+            }
+            set {
+                this["CustMaxBool2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CustMaxBool3 {
+            get {
+                return ((bool)(this["CustMaxBool3"]));
+            }
+            set {
+                this["CustMaxBool3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CustMaxBool4 {
+            get {
+                return ((bool)(this["CustMaxBool4"]));
+            }
+            set {
+                this["CustMaxBool4"] = value;
+            }
+        }
     }
 }

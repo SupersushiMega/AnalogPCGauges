@@ -62,6 +62,7 @@
             this.CustomMaxBool4 = new System.Windows.Forms.CheckBox();
             this.CustomMax4 = new System.Windows.Forms.NumericUpDown();
             this.CustomMaxValue = new System.Windows.Forms.Label();
+            this.Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CPU_Usage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RAM_Usage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomMax1)).BeginInit();
@@ -381,11 +382,22 @@
             this.CustomMaxValue.Text = "CustomMax";
             this.CustomMaxValue.Click += new System.EventHandler(this.label1_Click);
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(586, 193);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(88, 31);
+            this.Save.TabIndex = 30;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 274);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.CustomMaxValue);
             this.Controls.Add(this.CustomMaxBool4);
             this.Controls.Add(this.CustomMax4);
@@ -462,6 +474,7 @@
         private System.Windows.Forms.CheckBox CustomMaxBool4;
         private System.Windows.Forms.NumericUpDown CustomMax4;
         private System.Windows.Forms.Label CustomMaxValue;
+        private System.Windows.Forms.Button Save;
     }
 }
 

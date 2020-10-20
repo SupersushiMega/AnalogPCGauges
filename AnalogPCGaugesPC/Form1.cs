@@ -62,6 +62,55 @@ namespace AnalogPCGaugesPC
                 Gauge3Hard.Items.Add(hardware.Name);
                 Gauge4Hard.Items.Add(hardware.Name);
             }
+
+            //Load hardware
+            //===============================================================================
+            Gauge1Hard.SelectedItem = Properties.Settings.Default.Hard1;
+
+            Gauge2Hard.SelectedItem = Properties.Settings.Default.Hard2;
+
+            Gauge3Hard.SelectedItem = Properties.Settings.Default.Hard3;
+
+            Gauge4Hard.SelectedItem = Properties.Settings.Default.Hard4;
+            //===============================================================================
+
+            //Load SensType
+            //===============================================================================
+            Gauge1SensType.SelectedIndex = Properties.Settings.Default.SensType1;
+
+            Gauge2SensType.SelectedIndex = Properties.Settings.Default.SensType2;
+
+            Gauge3SensType.SelectedIndex = Properties.Settings.Default.SensType3;
+
+            Gauge4SensType.SelectedIndex = Properties.Settings.Default.SensType4;
+            //===============================================================================
+
+            //Load Sens
+            //===============================================================================
+
+            Gauge1Sens.SelectedIndex = Properties.Settings.Default.Sens1;
+
+            Gauge2Sens.SelectedIndex = Properties.Settings.Default.Sens2;
+
+            Gauge3Sens.SelectedIndex = Properties.Settings.Default.Sens3;
+
+            Gauge4Sens.SelectedIndex = Properties.Settings.Default.Sens4;
+
+            //===============================================================================
+
+            //Load CustomMax
+            //===============================================================================
+            CustomMax1.Value = Properties.Settings.Default.CustMax1;
+            CustomMax2.Value = Properties.Settings.Default.CustMax2;
+            CustomMax3.Value = Properties.Settings.Default.CustMax3;
+            CustomMax4.Value = Properties.Settings.Default.CustMax4;
+
+            CustomMaxBool1.Checked = Properties.Settings.Default.CustMaxBool1;
+            CustomMaxBool2.Checked = Properties.Settings.Default.CustMaxBool2;
+            CustomMaxBool3.Checked = Properties.Settings.Default.CustMaxBool3;
+            CustomMaxBool4.Checked = Properties.Settings.Default.CustMaxBool4;
+            //===============================================================================
+
             timer.Start();
         }
 
@@ -295,7 +344,7 @@ namespace AnalogPCGaugesPC
                 Sens = Gauge4Sens;
             }
 
-            foreach(var hardware in comp.Hardware)
+            foreach (var hardware in comp.Hardware)
             {
                 if (hardware.Name == Convert.ToString(Hard.SelectedItem))
                 {
@@ -382,6 +431,36 @@ namespace AnalogPCGaugesPC
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Hard1 = Convert.ToString(Gauge1Hard.SelectedItem);
+            Properties.Settings.Default.Hard2 = Convert.ToString(Gauge2Hard.SelectedItem);
+            Properties.Settings.Default.Hard3 = Convert.ToString(Gauge3Hard.SelectedItem);
+            Properties.Settings.Default.Hard4 = Convert.ToString(Gauge4Hard.SelectedItem);
+
+            Properties.Settings.Default.SensType1 = Gauge1SensType.SelectedIndex;
+            Properties.Settings.Default.SensType2 = Gauge2SensType.SelectedIndex;
+            Properties.Settings.Default.SensType3 = Gauge3SensType.SelectedIndex;
+            Properties.Settings.Default.SensType4 = Gauge4SensType.SelectedIndex;
+
+            Properties.Settings.Default.Sens1 = Gauge1Sens.SelectedIndex;
+            Properties.Settings.Default.Sens2 = Gauge2Sens.SelectedIndex;
+            Properties.Settings.Default.Sens3 = Gauge3Sens.SelectedIndex;
+            Properties.Settings.Default.Sens4 = Gauge4Sens.SelectedIndex;
+
+            Properties.Settings.Default.CustMax1 = CustomMax1.Value;
+            Properties.Settings.Default.CustMax2 = CustomMax2.Value;
+            Properties.Settings.Default.CustMax3 = CustomMax3.Value;
+            Properties.Settings.Default.CustMax4 = CustomMax4.Value;
+
+            Properties.Settings.Default.CustMaxBool1 = CustomMaxBool1.Checked;
+            Properties.Settings.Default.CustMaxBool2 = CustomMaxBool2.Checked;
+            Properties.Settings.Default.CustMaxBool3 = CustomMaxBool3.Checked;
+            Properties.Settings.Default.CustMaxBool4 = CustomMaxBool4.Checked;
+
+            Properties.Settings.Default.Save();
         }
     }
 }
