@@ -12,6 +12,7 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace AnalogPCGaugesPC
 {
@@ -57,11 +58,17 @@ namespace AnalogPCGaugesPC
 
             foreach (var hardware in comp.Hardware)
             {
+                hardware.Update();
                 Gauge1Hard.Items.Add(hardware.Name);
                 Gauge2Hard.Items.Add(hardware.Name);
                 Gauge3Hard.Items.Add(hardware.Name);
                 Gauge4Hard.Items.Add(hardware.Name);
             }
+
+            //foreach (var hardware in comp.Hardware)
+            //{
+            //    hardware.Update();
+            //}
 
             //Load hardware
             //===============================================================================
@@ -74,27 +81,51 @@ namespace AnalogPCGaugesPC
             Gauge4Hard.SelectedItem = Properties.Settings.Default.Hard4;
             //===============================================================================
 
+
+            //foreach (var hardware in comp.Hardware)
+            //{
+            //    hardware.Update();
+            //}
+
             //Load SensType
             //===============================================================================
-            Gauge1SensType.SelectedIndex = Properties.Settings.Default.SensType1;
+            try
+            {
+                Gauge1SensType.SelectedIndex = Properties.Settings.Default.SensType1;
 
-            Gauge2SensType.SelectedIndex = Properties.Settings.Default.SensType2;
+                Gauge2SensType.SelectedIndex = Properties.Settings.Default.SensType2;
 
-            Gauge3SensType.SelectedIndex = Properties.Settings.Default.SensType3;
+                Gauge3SensType.SelectedIndex = Properties.Settings.Default.SensType3;
 
-            Gauge4SensType.SelectedIndex = Properties.Settings.Default.SensType4;
+                Gauge4SensType.SelectedIndex = Properties.Settings.Default.SensType4;
+            }
+            catch
+            {
+
+            }
             //===============================================================================
+
+            //foreach (var hardware in comp.Hardware)
+            //{
+            //    hardware.Update();
+            //}
 
             //Load Sens
             //===============================================================================
+            try
+            {
+                Gauge1Sens.SelectedIndex = Properties.Settings.Default.Sens1;
 
-            Gauge1Sens.SelectedIndex = Properties.Settings.Default.Sens1;
+                Gauge2Sens.SelectedIndex = Properties.Settings.Default.Sens2;
 
-            Gauge2Sens.SelectedIndex = Properties.Settings.Default.Sens2;
+                Gauge3Sens.SelectedIndex = Properties.Settings.Default.Sens3;
 
-            Gauge3Sens.SelectedIndex = Properties.Settings.Default.Sens3;
+                Gauge4Sens.SelectedIndex = Properties.Settings.Default.Sens4;
+            }
+            catch
+            {
 
-            Gauge4Sens.SelectedIndex = Properties.Settings.Default.Sens4;
+            }
 
             //===============================================================================
 
@@ -110,7 +141,6 @@ namespace AnalogPCGaugesPC
             CustomMaxBool3.Checked = Properties.Settings.Default.CustMaxBool3;
             CustomMaxBool4.Checked = Properties.Settings.Default.CustMaxBool4;
             //===============================================================================
-
             timer.Start();
         }
 

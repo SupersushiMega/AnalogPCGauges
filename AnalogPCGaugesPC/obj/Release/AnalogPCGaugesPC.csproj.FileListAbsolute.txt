@@ -1,0 +1,12 @@
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Release\AnalogPCGaugesPC.exe.config
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Release\AnalogPCGaugesPC.exe
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Release\AnalogPCGaugesPC.pdb
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\bin\Release\OpenHardwareMonitorLib.dll
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.Form1.resources
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.Properties.Resources.resources
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.csproj.GenerateResource.cache
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.csproj.CoreCompileInputs.cache
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.csproj.CopyComplete
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.exe
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.pdb
+D:\Arduino\AnalogPCGauges\AnalogPCGaugesPC\obj\Release\AnalogPCGaugesPC.csprojAssemblyReference.cache
